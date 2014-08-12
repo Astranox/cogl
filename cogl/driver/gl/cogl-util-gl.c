@@ -155,6 +155,9 @@ _cogl_gl_util_parse_gl_version (const char *version_string,
   const char *major_end, *minor_end;
   int major = 0, minor = 0;
 
+  if (version_string == NULL)
+    return FALSE;
+
   /* Extract the major number */
   for (major_end = version_string; *major_end >= '0'
          && *major_end <= '9'; major_end++)
